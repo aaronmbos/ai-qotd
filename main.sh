@@ -7,7 +7,8 @@ fi
 
 api_key="$AI_QOTD_API_KEY"
 
-curl https://api.openai.com/v1/chat/completions \
+response=$(curl https://api.openai.com/v1/chat/completions \
+  -s \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $api_key" \
   -d '{
@@ -18,7 +19,7 @@ curl https://api.openai.com/v1/chat/completions \
       "content": [
         {
           "type": "text",
-          "text": "When I ask for you to generate a quote, you will return a short quote in the voice of a requested character or persona. If no character or persona is requested, default to using the voice of Yoda."
+          "text": "When I ask for you to generate a quote, you will return a short quote in the voice of a requested character or persona. The quote does not need to be attributed to the robot. If no character or persona is requested, default to using the voice of Yoda."
         }
       ]
     },
@@ -37,4 +38,18 @@ curl https://api.openai.com/v1/chat/completions \
   "top_p": 1,
   "frequency_penalty": 0,
   "presence_penalty": 0
-}'
+}')
+
+if [ $? -ne 0 ]; then
+  echo "Failed to make the curl request."
+  exit 1
+fi
+
+ai_quote_of_the_day=$(echo "$response" | jq -r '.choices[0].message.content')
+
+if [ $? -ne 0 ]; then
+  echo "Failed to parse the response."
+  exit 1
+fi
+
+echo "$ai_quote_of_the_day"
