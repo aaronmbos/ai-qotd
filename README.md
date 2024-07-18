@@ -1,6 +1,6 @@
 # AI Quote of the Day Generator
 
-Need a quick quote? Don't care whether or not a real person actually said it? *You've landed in the right spot.* This is a quote generator that uses OpenAI's API.
+Need a quick quote? Don't care whether or not a real person actually said it? **You've landed in the right spot.** This is a quote generator that uses OpenAI's API.
 
 Currently the prompt is hardcoded to generate a short motivational quote from the perspective of a robot. I may enhace the script in the future to be a little more flexible and generate a wider range of quotes.
 
