@@ -18,6 +18,6 @@ Here are some examples of the quote generator in action.
   - `curl` for making HTTP requests
   - `jq` for parsing JSON response payloads
 2. Using the tool requires an OpenAI API Key.
-3. Create an environment variable named AI_QOTD_API_KEY with a value of your OpenAI API Key
+3. Create an environment variable named `AI_QOTD_API_KEY` with a value of your OpenAI API Key
 4. Download or copy the contents of `main.sh` into an executable bash script on your machine.
 5. Run the script to generate a quote.
