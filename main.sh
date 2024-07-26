@@ -12,7 +12,7 @@ response=$(curl https://api.openai.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $api_key" \
   -d '{
-  "model": "gpt-3.5-turbo-0125",
+  "model": "gpt-4o",
   "messages": [
     {
       "role": "system",
