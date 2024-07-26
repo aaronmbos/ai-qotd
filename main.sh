@@ -33,7 +33,7 @@ response=$(curl https://api.openai.com/v1/chat/completions \
       ]
     }
   ],
-  "temperature": 1,
+  "temperature": 1.7,
   "max_tokens": 256,
   "top_p": 1,
   "frequency_penalty": 0,
